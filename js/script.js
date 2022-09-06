@@ -31,8 +31,8 @@ console.log("hello world");
 
 const cellBtn = document.querySelectorAll(".cell");
 const startBtn = document.querySelector(".center");
-const myArray = [];
-const userArray = [];
+let myArray = [];
+let userArray = [];
 let winArray = [];
 let loseArray = [];
 let userErrors = [];
@@ -41,13 +41,15 @@ let userAnswer;
 startBtn.addEventListener("click", startGame);
 
 function startGame() {
+  myArray = [];
+  userArray = [];
+  winArray = [];
+  loseArray = [];
+  userErrors = [];
   cellBtn.forEach((value) => {
     const randomNum = getRandomNumber(1, 29);
     value.innerHTML = randomNum;
     myArray.push(randomNum);
-    winArray = [];
-    loseArray = [];
-    userErrors = [];
   });
   setTimeout(() => {
     cellBtn.forEach((value) => {
